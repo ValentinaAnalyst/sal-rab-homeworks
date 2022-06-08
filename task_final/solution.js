@@ -1,4 +1,25 @@
-// Исправьте функцию sendRequest
+function sendRequest(client, order, goods) {
+    let data = {
+    "client": `name` + ` ` + `phone`,
+    "order": {
+        "address": `street + house + entrance + floor + flat`,
+        "sum": Number
+    },
+    "goods": [
+        {
+            "title": String,
+            "count": Number
+        }
+    ]
+};
+for (let i = 0; i < goods.length; i++) {
+    data.goods.push({title, count});
+}
+let jsonData = JSON.stringify({data});
+    return jsonData
+}
+
+
 // Аргументы функции:
 // - имя клиента
 // - телефон клиента
@@ -33,21 +54,3 @@
 //    }
 // }
 
-function sendRequest(name, phone, address, goods, sum) {
-    let data = {goods: [], order: {}};
-
-    let countOfGoods = goods.length;
-
-    for (let i = 0; i <= countOfGoods; i += 1) {
-        data.goods.push(goods[i].title);
-    }
-
-    data.order.address = address;
-    data.order.sum = name + phone + address + goods + sum;
-
-    data.client = 'Иван';
-
-    let jsonData = JSON.stringify(data);
-
-    return jsonData;
-}
