@@ -1,24 +1,24 @@
-function sendRequest(client, order, goods) {
+function sendRequest(name, phone, {street, house, entrance, floor, flat}, goods, sum) {
     let data = {
-    "client": `name` + ` ` + `phone`,
-    "order": {
-        "address": `street + house + entrance + floor + flat`,
-        "sum": Number
-    },
-    "goods": [
-        {
-            "title": String,
-            "count": Number
-        }
-    ]
-};
-for (let i = 0; i < goods.length; i++) {
-    data.goods.push({title, count});
+        client: name + phone,
+        order: {
+            address: {street, house, entrance, floor, flat},
+            sum: sum
+        },
+        goods: [
+            {
+                title: data.goods.title,
+                count: data.goods.count
+            }
+        ]
+    }
+    let countOfGoods = goods.length;
+    for (let i = 0; i < countOfGoods; i++) {
+    data.goods.push({title:goods[i].title, count: goods[i].count});
 }
-let jsonData = JSON.stringify({data});
-    return jsonData
+let jsonData = JSON.stringify({sendRequest});
+return jsonData
 }
-
 
 // Аргументы функции:
 // - имя клиента
