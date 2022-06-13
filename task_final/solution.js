@@ -16,7 +16,7 @@ function sendRequest(name, phone, {street, house, entrance, floor, flat}, goods,
     for (let i = 0; i < countOfGoods; i++) {
     data.goods.push({title:goods[i].title, count: goods[i].count});
 }
-let jsonData = JSON.stringify({sendRequest});
+let jsonData = JSON.stringify({data});
 return jsonData
 }
 
